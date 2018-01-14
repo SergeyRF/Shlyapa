@@ -14,6 +14,7 @@ public class Game {
     private int time;
     private int word;
     private int round;
+    private static int i;
 
     public List getWords(){
         List<String> word = new ArrayList<>();
@@ -23,7 +24,8 @@ public class Game {
         return word;
     }
     public String getNextWord(){
-        return null;
+        i++;
+        return "Shlyapa"+i;
     }
 
     public Game() {
