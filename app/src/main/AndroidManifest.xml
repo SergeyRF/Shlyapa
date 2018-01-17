@@ -16,7 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".GameActyvity"></activity>
+        <activity android:name=".GameActyvity" />
+        <activity android:name=".PeopleActivity" />
+        <activity android:name=".ConditionsActivity" />
+        <activity android:name=".RoundActivity"></activity>
     </application>
 
 </manifest>

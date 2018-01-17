@@ -23,6 +23,19 @@ public class Game {
         }
         return word;
     }
+
+    public void setTime(int time){
+        this.time=time;
+    }
+    public int getTime(){
+        return time;
+    }
+    public void setCommand(int command){
+        this.command=command;
+    }
+    public int getCommand(){
+        return command;
+    }
     public String getNextWord(){
         i++;
         return "Shlyapa"+i;

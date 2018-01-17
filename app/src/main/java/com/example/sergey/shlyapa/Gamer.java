@@ -15,4 +15,8 @@ public class Gamer {
         id = idd;
         idd++;
     }
+    public String getName(){
+        return name;
+    }
+
 }

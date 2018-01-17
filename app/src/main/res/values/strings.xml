@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Shlyapa</string>
+    <string name="info">Правила</string>
+    <string name="game">Игра</string>
+    <string name="people">Список людишек</string>
+    <string name="name">Введи имя</string>
+    <string name="next">Дальше</string>
+    <string name="condit">Условия игры</string>
+    <string name="words">Колличество слов игрока</string>
 </resources>
