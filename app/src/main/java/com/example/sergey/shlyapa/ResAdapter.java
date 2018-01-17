@@ -41,14 +41,17 @@ public class ResAdapter extends RecyclerView.Adapter<ResAdapter.Holder> {
     class Holder extends RecyclerView.ViewHolder{
 
         private TextView name;
+
         public Holder(View itemView) {
             super(itemView);
+
             name = itemView.findViewById(R.id.name);
         }
         public void bind(Gamer gamer){
             name.setText(gamer.getName());
 
         }
+
 
     }
 }

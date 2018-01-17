@@ -16,6 +16,7 @@ public class PeopleProvider {
     public void rename(){
 
     }
+
   public static List<Gamer> getGamer(){
      List<Gamer> gamer = new ArrayList<>();
         for(int i=0,j=12; i<10;i++,j++)
@@ -26,6 +27,7 @@ public class PeopleProvider {
 
         return gamer;
  }
+
 
 
 }

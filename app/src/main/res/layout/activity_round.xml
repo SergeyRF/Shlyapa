@@ -5,5 +5,75 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.sergey.shlyapa.RoundActivity">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:text="Команды"
+        android:id="@+id/comands"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:id="@+id/rev"
+        app:layout_constraintTop_toBottomOf="@+id/comands"
+         />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/rev"
+        android:id="@+id/round"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/round"
+        android:id="@+id/roundconfig"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/game"
+        android:text="@string/game"
+        />
+
+    <TextView
+        android:id="@+id/gcomand"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Команда "
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintBottom_toTopOf="@+id/game"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/gname"/>
+
+    <TextView
+        android:id="@+id/gname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ИМЯ "
+        app:layout_constraintBottom_toBottomOf="@id/gcomand"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/gcomand" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/gname"
+        android:text="Играет"
+        />
+
+
 
 </android.support.constraint.ConstraintLayout>
