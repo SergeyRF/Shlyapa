@@ -8,12 +8,22 @@ import java.util.List;
  */
 // Всё для игры берем отсюда
 public class Game {
+
+    private static Game instance;
+
     final private ArrayList<String> gShlypa = new ArrayList<>();
     private List<Round> rounds = new ArrayList<>();
     private int command;
     private int time;
     private int word;
     private int round;
+
+    public static Game getInstance() {
+        if(instance == null) {
+            instance = new Game();
+        }
+        return instance;
+    }
 
     public List getWords(){
         List<String> word = new ArrayList<>();
@@ -22,11 +32,12 @@ public class Game {
         }
         return word;
     }
+
     public String getNextWord(){
         return null;
     }
 
-    public Game() {
+    private Game() {
         for(int a = 0; a < 3; a++) {
             rounds.add(new Round("Hui nani " + a));
         }
