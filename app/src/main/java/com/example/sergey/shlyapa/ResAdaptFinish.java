@@ -52,49 +52,36 @@ public class ResAdaptFinish extends RecyclerView.Adapter<ResAdaptFinish.Holder> 
             yes.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    click(v);
+                    //click(v);
+                    not.setChecked(false);
+                    elsee.setChecked(false);
+                    yes.setChecked(true);
                 }
             });
             not.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    click(v);
+                    //click(v);
+                    yes.setChecked(false);
+                    elsee.setChecked(false);
+                    not.setChecked(true);
                 }
             });
             elsee.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    click(v);
+                    //click(v);
+                    elsee.setChecked(true);
+                    yes.setChecked(false);
+                    not.setChecked(false);
                 }
             });
 
 
         }
 
-        public void click(View view) {
-            CheckBox cb = (CheckBox) view;
-            boolean a = cb.isChecked();
-            switch (view.getId()) {
-                case R.id.yes:
-                    if (a) {
-                        not.setChecked(false);
-                        elsee.setChecked(false);
-                    }
-                    break;
-                case R.id.not:
-                    if (a) {
-                        yes.setChecked(false);
-                        elsee.setChecked(false);
-                    }
-                    break;
-                case R.id.elsee:
-                    if (a) {
-                        yes.setChecked(false);
-                        not.setChecked(false);
-                    }
-                    break;
-            }
+
         }
 
     }
-}
+
