@@ -8,7 +8,7 @@ import java.util.List;
  */
 //Создание Имени
 public class PeopleProvider {
-    ArrayList<String> names = new ArrayList<>();
+    List<String> names = new ArrayList<>();
     public void name(String name){
     names.add(name);
 
@@ -16,14 +16,18 @@ public class PeopleProvider {
     public void rename(){
 
     }
- public List<Gamer> getGamer(){
+
+  public static List<Gamer> getGamer(){
      List<Gamer> gamer = new ArrayList<>();
         for(int i=0,j=12; i<10;i++,j++)
         {
             gamer.add(new Gamer("OLegka"+j));
+
         }
+
         return gamer;
  }
+
 
 
 }
