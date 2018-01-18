@@ -19,7 +19,9 @@
         <activity android:name=".GameActyvity" />
         <activity android:name=".PeopleActivity" />
         <activity android:name=".ConditionsActivity" />
-        <activity android:name=".RoundActivity"></activity>
+        <activity android:name=".RoundActivity" />
+        <activity android:name=".RoundFinishActivity" />
+        <activity android:name=".VinerActivity"></activity>
     </application>
 
 </manifest>
