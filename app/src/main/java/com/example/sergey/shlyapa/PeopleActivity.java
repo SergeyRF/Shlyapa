@@ -31,6 +31,7 @@ public class PeopleActivity extends AppCompatActivity {
         RecyclerView rv = findViewById(R.id.rv);
         rv.setLayoutManager(new LinearLayoutManager(this));
         ResAdapter adapter = new ResAdapter();
+
         adapter.setAdPeople(PeopleProvider.getGamer());
         rv.setAdapter(adapter);
 
