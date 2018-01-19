@@ -8,48 +8,65 @@ import java.util.List;
  */
 // Всё для игры берем отсюда
 public class Game {
+
+    private static Game instance;
+
     final private ArrayList<String> gShlypa = new ArrayList<>();
     private List<Round> rounds = new ArrayList<>();
+    private Shlyapa shlyapa;
     private int command;
-    private int time;
+    private int time = 60;
     private int word;
     private int round;
     private static int i;
 
-    public List getWords(){
-        List<String> word = new ArrayList<>();
-        for(int i=0; i<30; i++){
-            word.add("Хуепутало"+i);
+    public static Game getInstance() {
+        if (instance == null) {
+            instance = new Game();
         }
-        return word;
+        return instance;
     }
 
-    public void setTime(int time){
-        this.time=time;
+    public List getWords() {
+        return shlyapa.getWords();
     }
-    public int getTime(){
+
+    public Shlyapa getShlyapa() {
+        return shlyapa;
+    }
+
+    public void setTime(int time) {
+        this.time = time;
+    }
+
+    public int getTime() {
         return time;
     }
-    public void setCommand(int command){
-        this.command=command;
-    }
-    public int getCommand(){
-        return command;
-    }
-    public String getNextWord(){
-        i++;
-        return "Shlyapa"+i;
+
+    public void setCommand(int command) {
+        this.command = command;
     }
 
-    public Game() {
-        for(int a = 0; a < 3; a++) {
+    public int getCommand() {
+        return command;
+    }
+
+    public String getNextWord() {
+        i++;
+        return "Shlyapa" + i;
+    }
+
+    private Game() {
+        for (int a = 0; a < 3; a++) {
             rounds.add(new Round("Hui nani " + a));
         }
+
+        shlyapa = new Shlyapa();
     }
 
     public Round getNextRound() {
         round++;
-        if(round < rounds.size()) {
+        if (round < rounds.size()) {
             return rounds.get(round);
         }
         return null;
