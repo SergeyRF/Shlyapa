@@ -16,5 +16,6 @@ public class RoundFinishActivity extends AppCompatActivity {
         rv.setLayoutManager(new LinearLayoutManager(this));
         rv.setAdapter(finish);
 
+        //dfdfdf
     }
 }
