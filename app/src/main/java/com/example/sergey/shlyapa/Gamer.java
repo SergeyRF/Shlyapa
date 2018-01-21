@@ -10,10 +10,14 @@ public class Gamer {
      static long idd;
 
 
-    public Gamer(String name) {
-        this.name = name;
+    public Gamer() {
+
         id = idd;
         idd++;
+    }
+
+    public void setName (String string){
+        name = string;
     }
     public String getName(){
         return name;

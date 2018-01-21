@@ -31,13 +31,19 @@ public class PeopleActivity extends AppCompatActivity {
         RecyclerView rv = findViewById(R.id.rv);
         rv.setLayoutManager(new LinearLayoutManager(this));
         ResAdapter adapter = new ResAdapter();
+        EditText name = findViewById(R.id.name);
 
-        adapter.setAdPeople(PeopleProvider.getGamer());
-        rv.setAdapter(adapter);
+
 
         fAB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(!name.getText().toString().isEmpty()) {
+                    PeopleProvider.setGamer(name.getText().toString());
+                    name.setText(null);
+                }
+                adapter.setAdPeople(PeopleProvider.getGamer());
+                rv.setAdapter(adapter);
 
             }
         });

@@ -8,4 +8,5 @@
     <string name="condit">Условия игры</string>
     <string name="words">Колличество слов игрока</string>
     <string name="nextgame">Новая</string>
+    <string name="comand">Колличество команд</string>
 </resources>

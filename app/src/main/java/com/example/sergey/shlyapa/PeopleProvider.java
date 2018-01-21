@@ -8,22 +8,29 @@ import java.util.List;
  */
 //Создание Имени
 public class PeopleProvider {
+    private static int wordsperson;
     List<String> names = new ArrayList<>();
-    public void name(String name){
-    names.add(name);
+    public void name(String name) {
+        names.add(name);
+    }
+    static List<Gamer> gamer = new ArrayList<>();
+
+
+
+    public static void setGamer(String string){
+        Gamer i =new Gamer();
+        i.setName(string);
+        gamer.add(i);
 
     }
-    public void rename(){
-
+    public static void setWordsperson(int i ){
+        wordsperson = i;
+    }
+    public int getWordsperson(){
+        return wordsperson;
     }
 
   public static List<Gamer> getGamer(){
-     List<Gamer> gamer = new ArrayList<>();
-        for(int i=0,j=12; i<10;i++,j++)
-        {
-            gamer.add(new Gamer("OLegka"+j));
-
-        }
 
         return gamer;
  }

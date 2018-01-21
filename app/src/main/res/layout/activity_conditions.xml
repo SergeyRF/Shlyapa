@@ -50,6 +50,52 @@
         app:layout_constraintTop_toBottomOf="@+id/seek"
         android:id="@+id/words"
         android:text="@string/words"/>
+
+    <android.support.v7.widget.AppCompatSeekBar
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:max="5"
+        android:progress="1"
+        app:layout_constraintTop_toBottomOf="@+id/words"
+        android:id="@+id/word"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/words"
+        android:id="@+id/znach"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/word"
+        android:id="@+id/comand"
+        android:text="@string/comand"/>
+
+    <android.support.v7.widget.AppCompatSeekBar
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+
+        android:progress="1"
+        app:layout_constraintTop_toBottomOf="@+id/comand"
+        android:id="@+id/comande"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/comand"
+        android:id="@+id/znache"
+        />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -57,6 +103,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         android:id="@+id/button1"
         android:text="@string/game"/>
+
 
 
 </android.support.constraint.ConstraintLayout>
