@@ -26,7 +26,7 @@ public class ResAdaptFinish extends RecyclerView.Adapter<ResAdaptFinish.Holder> 
 
     @Override
     public void onBindViewHolder(Holder holder, int position) {
-        Log.d(TAG, "onBindViewHolder: ");
+
         holder.bind(words.get(position));
 
     }
@@ -61,8 +61,8 @@ public class ResAdaptFinish extends RecyclerView.Adapter<ResAdaptFinish.Holder> 
 
         public void bind(Word w) {
             word.setText(w.getWord());
-            if(w.getTrOFl()){yes.setChecked(true);}
-            else {not.setChecked(true);}
+            if(w.getTrOFl()){yes.setChecked(true); w.setDel();}
+            else {not.setChecked(true);w.setDel();}
             yes.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -70,7 +70,7 @@ public class ResAdaptFinish extends RecyclerView.Adapter<ResAdaptFinish.Holder> 
                     not.setChecked(false);
                     elsee.setChecked(false);
                     yes.setChecked(true);
-
+                    w.setDel();
                 }
             });
             not.setOnClickListener(new View.OnClickListener() {
@@ -80,6 +80,7 @@ public class ResAdaptFinish extends RecyclerView.Adapter<ResAdaptFinish.Holder> 
                     yes.setChecked(false);
                     elsee.setChecked(false);
                     not.setChecked(true);
+                    w.setDel();
                 }
             });
             elsee.setOnClickListener(new View.OnClickListener() {
@@ -89,6 +90,7 @@ public class ResAdaptFinish extends RecyclerView.Adapter<ResAdaptFinish.Holder> 
                     elsee.setChecked(true);
                     yes.setChecked(false);
                     not.setChecked(false);
+                    w.setNoDel();
                 }
             });
 

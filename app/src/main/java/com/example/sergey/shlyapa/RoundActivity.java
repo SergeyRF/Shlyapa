@@ -20,11 +20,16 @@ public class RoundActivity extends AppCompatActivity {
         ResAdapCom rac = new ResAdapCom();
         rac.setComands(Comands.getComands());
         recyclerView.setAdapter(rac);
+
+        Game.getInstance().getShlyapa().createNewShlyapa();
+
+
         button = findViewById(R.id.game);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(RoundActivity.this,RoundFinishActivity.class);
+                Intent intent= new Intent(RoundActivity.this, GameActyvity.class);
+
                 startActivity(intent);
             }
         });

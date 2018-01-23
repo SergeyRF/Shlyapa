@@ -36,7 +36,7 @@ public class GameActyvity extends AppCompatActivity {
         game = Game.getInstance();
         shlyapa = game.getShlyapa();
         timeLeft = game.getTime();
-        shlyapa.createNewShlyapa();
+        shlyapa.rafleShaffle();
         currentword = shlyapa.getNextWord();
         tvWord.setText(currentword.getWord());
         cvWord.setOnClickListener(new View.OnClickListener() {
@@ -52,7 +52,7 @@ public class GameActyvity extends AppCompatActivity {
                 currentword.setTrOfl(false);
                 currentword.setGame();
                 currentword = shlyapa.getNextWord();
-                if (currentword.getWord() != null) {
+                if (currentword != null) {
                     tvWord.setText(currentword.getWord());
                 } else {
                     finishRound();
@@ -65,7 +65,7 @@ public class GameActyvity extends AppCompatActivity {
                 currentword.setTrOfl(true);
                 currentword.setGame();
                 currentword = shlyapa.getNextWord();
-                if (currentword.getWord() != null) {
+                if (currentword!= null) {
                     tvWord.setText(currentword.getWord());
                 } else {
                     finishRound();

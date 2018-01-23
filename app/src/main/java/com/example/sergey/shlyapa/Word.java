@@ -17,6 +17,7 @@ public class Word {
            id=i;
     }
     public void setGame(){game=true;}
+    public void setNoDel(){game = false;}
     public boolean getGame(){return game;}
     public int getId(){
         return id;

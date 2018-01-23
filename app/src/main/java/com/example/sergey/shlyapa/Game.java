@@ -25,6 +25,7 @@ public class Game {
         }
         return instance;
     }
+
     public void setword(Word w){
         wordround.add(w);
     }

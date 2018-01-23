@@ -18,15 +18,14 @@ public class FirstActivity extends AppCompatActivity {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(FirstActivity.this, PeopleActivity.class);
-                startActivity(intent);
+
             }
         });
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(FirstActivity.this, GameActyvity.class);
+                Intent intent= new Intent(FirstActivity.this, PeopleActivity.class);
                 startActivity(intent);
 
             }
