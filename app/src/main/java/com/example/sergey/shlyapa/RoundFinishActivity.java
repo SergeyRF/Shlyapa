@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import java.util.List;
+
 public class RoundFinishActivity extends AppCompatActivity {
 
     @Override
@@ -13,9 +15,9 @@ public class RoundFinishActivity extends AppCompatActivity {
         setContentView(R.layout.activity_round_finish);
         ResAdaptFinish finish = new ResAdaptFinish();
         RecyclerView rv = findViewById(R.id.fin);
+        finish.setWords(Game.getInstance().getShlyapa().getWordsGame());
         rv.setLayoutManager(new LinearLayoutManager(this));
         rv.setAdapter(finish);
-
         //dfdfdf
     }
 }

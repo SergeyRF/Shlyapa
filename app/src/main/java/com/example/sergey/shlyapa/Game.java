@@ -10,12 +10,11 @@ import java.util.List;
 public class Game {
 
     private static Game instance;
-
-    final private ArrayList<String> gShlypa = new ArrayList<>();
     private List<Round> rounds = new ArrayList<>();
     private Shlyapa shlyapa;
+    private List<Word> wordround = new  ArrayList<>();
     private int command;
-    private int time = 60;
+    private int time = 5;
     private int word;
     private int round;
     private static int i;
@@ -26,6 +25,11 @@ public class Game {
         }
         return instance;
     }
+    public void setword(Word w){
+        wordround.add(w);
+    }
+
+    public List<Word> getword(){return wordround;}
 
     public List getWords() {
         return shlyapa.getWords();

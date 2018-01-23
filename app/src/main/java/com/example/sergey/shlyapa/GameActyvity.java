@@ -8,6 +8,9 @@ import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class GameActyvity extends AppCompatActivity {
 
     private TextView tvWord;
@@ -15,6 +18,8 @@ public class GameActyvity extends AppCompatActivity {
     private CardView cvWord;
     private Game game;
     private Shlyapa shlyapa;
+    private Word currentword;
+
 
     private int timeLeft;
     private boolean started;
@@ -31,8 +36,9 @@ public class GameActyvity extends AppCompatActivity {
         game = Game.getInstance();
         shlyapa = game.getShlyapa();
         timeLeft = game.getTime();
-
-        tvWord.setText(shlyapa.getNextWord());
+        shlyapa.createNewShlyapa();
+        currentword = shlyapa.getNextWord();
+        tvWord.setText(currentword.getWord());
         cvWord.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -43,9 +49,11 @@ public class GameActyvity extends AppCompatActivity {
         cvWord.setOnTouchListener(new OnSwipeTouchListener() {
             @Override
             public boolean onSwipeLeft() {
-                String nextWord = shlyapa.getNextWord();
-                if (nextWord != null) {
-                    tvWord.setText(nextWord);
+                currentword.setTrOfl(false);
+                currentword.setGame();
+                currentword = shlyapa.getNextWord();
+                if (currentword.getWord() != null) {
+                    tvWord.setText(currentword.getWord());
                 } else {
                     finishRound();
                 }
@@ -54,9 +62,11 @@ public class GameActyvity extends AppCompatActivity {
 
             @Override
             public boolean onSwipeRight() {
-                String nextWord = shlyapa.getNextWord();
-                if (nextWord != null) {
-                    tvWord.setText(nextWord);
+                currentword.setTrOfl(true);
+                currentword.setGame();
+                currentword = shlyapa.getNextWord();
+                if (currentword.getWord() != null) {
+                    tvWord.setText(currentword.getWord());
                 } else {
                     finishRound();
                 }

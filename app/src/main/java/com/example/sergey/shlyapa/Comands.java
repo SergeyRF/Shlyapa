@@ -46,4 +46,5 @@ public class Comands {
     public void plusBal(){
         bal += 1;
     }
+    public  void minusBal(){bal-=1;}
 }

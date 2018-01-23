@@ -1,17 +1,23 @@
 package com.example.sergey.shlyapa;
 
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by sergey on 1/17/18.
  */
 
 public class ResAdaptFinish extends RecyclerView.Adapter<ResAdaptFinish.Holder> {
+    public static final String TAG = ResAdaptFinish.class.getSimpleName();
+    List<Word> words=new ArrayList<>();
     @Override
     public com.example.sergey.shlyapa.ResAdaptFinish.Holder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.holder, parent, false);
@@ -20,13 +26,19 @@ public class ResAdaptFinish extends RecyclerView.Adapter<ResAdaptFinish.Holder> 
 
     @Override
     public void onBindViewHolder(Holder holder, int position) {
-        holder.bind("fdgf");
+        Log.d(TAG, "onBindViewHolder: ");
+        holder.bind(words.get(position));
 
     }
 
     @Override
     public int getItemCount() {
-        return 1;
+        Log.d(TAG, "getItemCount: " + words.size());
+        return words.size();
+    }
+    public void setWords(List<Word> w){
+        words=w;
+        notifyDataSetChanged();
     }
 
     class Holder extends RecyclerView.ViewHolder {
@@ -47,8 +59,10 @@ public class ResAdaptFinish extends RecyclerView.Adapter<ResAdaptFinish.Holder> 
 
         }
 
-        public void bind(String g) {
-            word.setText(g);
+        public void bind(Word w) {
+            word.setText(w.getWord());
+            if(w.getTrOFl()){yes.setChecked(true);}
+            else {not.setChecked(true);}
             yes.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -56,6 +70,7 @@ public class ResAdaptFinish extends RecyclerView.Adapter<ResAdaptFinish.Holder> 
                     not.setChecked(false);
                     elsee.setChecked(false);
                     yes.setChecked(true);
+
                 }
             });
             not.setOnClickListener(new View.OnClickListener() {
