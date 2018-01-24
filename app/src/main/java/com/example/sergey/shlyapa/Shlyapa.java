@@ -42,6 +42,7 @@ Shlyapa {
         ListIterator<Word> b = roudWords.listIterator();
         while (b.hasNext()){
             if(b.next().getDel()){
+
                 b.remove();
             }
         }

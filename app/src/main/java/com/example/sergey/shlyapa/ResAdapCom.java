@@ -6,6 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 /**
  * Created by sergey on 1/17/18.
@@ -14,7 +17,7 @@ import android.widget.TextView;
 public class ResAdapCom extends RecyclerView.Adapter<ResAdapCom.Holder>
 {
 
-        Comands[] comands = new Comands[0];
+        List<Comands> comands = new ArrayList<>();
 
     @Override
         public com.example.sergey.shlyapa.ResAdapCom.Holder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -25,14 +28,14 @@ public class ResAdapCom extends RecyclerView.Adapter<ResAdapCom.Holder>
 
         @Override
         public void onBindViewHolder(Holder holder, int position) {
-            holder.bind(comands[position]);
+            holder.bind(comands.get(position));
         }
 
         @Override
         public int getItemCount() {
-            return comands.length;
+            return comands.size();
         }
-        public void setComands (Comands[] comandsss){
+        public void setComands (List<Comands> comandsss){
             comands = comandsss;
             notifyDataSetChanged();
         }

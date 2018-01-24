@@ -18,7 +18,7 @@ public class RoundActivity extends AppCompatActivity {
         RecyclerView recyclerView = findViewById(R.id.rev);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         ResAdapCom rac = new ResAdapCom();
-        rac.setComands(Comands.getComands());
+        rac.setComands(Game.getInstance().getComands());
         recyclerView.setAdapter(rac);
 
         Game.getInstance().getShlyapa().createNewShlyapa();

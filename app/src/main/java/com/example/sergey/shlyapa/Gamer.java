@@ -10,7 +10,8 @@ public class Gamer {
      static long idd;
 
 
-    public Gamer() {
+    public Gamer(String string) {
+        name = string;
 
         id = idd;
         idd++;

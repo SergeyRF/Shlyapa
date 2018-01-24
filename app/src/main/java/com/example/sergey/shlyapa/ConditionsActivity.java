@@ -27,7 +27,7 @@ public class ConditionsActivity extends AppCompatActivity {
         znach = findViewById(R.id.znach);
         znache = findViewById(R.id.znache);
         final SeekBar comande = findViewById(R.id.comande);
-        comande.setMax((PeopleProvider.getGamer().size())/2-2);
+        comande.setMax(Game.getInstance().getGamers().size()/2-2);
         comande.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -87,7 +87,8 @@ public class ConditionsActivity extends AppCompatActivity {
            public void onClick(View v) {
                Game.getInstance().setTime(time);
                Game.getInstance().setCommand(comand);
-               PeopleProvider.setWordsperson(words);
+               Game.getInstance().setComands();
+               Game.getInstance().setWordsperson(words);
                Intent intent =new Intent(ConditionsActivity.this,RoundActivity.class);
                startActivity(intent);
            }

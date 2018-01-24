@@ -27,7 +27,7 @@ public class PeopleActivity extends AppCompatActivity {
         setContentView(R.layout.activity_people);
         fAB = findViewById(R.id.fAB);
         button = findViewById(R.id.next);
-        gamers = PeopleProvider.getGamer();
+        gamers = Game.getInstance().getGamers();
         RecyclerView rv = findViewById(R.id.rv);
         rv.setLayoutManager(new LinearLayoutManager(this));
         ResAdapter adapter = new ResAdapter();
@@ -39,10 +39,10 @@ public class PeopleActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(!name.getText().toString().isEmpty()) {
-                    PeopleProvider.setGamer(name.getText().toString());
+                    Game.getInstance().newGamers(name.getText().toString());
                     name.setText(null);
                 }
-                adapter.setAdPeople(PeopleProvider.getGamer());
+                adapter.setAdPeople(Game.getInstance().getGamers());
                 rv.setAdapter(adapter);
 
             }

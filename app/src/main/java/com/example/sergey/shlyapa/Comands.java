@@ -12,31 +12,23 @@ import java.util.Random;
 public class Comands {
 
     private int bal = 0;
-    String name;
-    List<Gamer> coma;
+    private String name;
+    private List<Gamer> coma;
 
-    private static Comands[] comands = new Comands[] {new Comands("Olejki"), new Comands("Ashotiki")};
-
-    public static Comands[] getComands() {
-        return comands;
-    }
-
-
-    private Comands(String name) {
+    public Comands(String name) {
         this.name=name;
     }
-    private void setComa(List<Gamer>coma){
-        this.coma=coma;
+
+    public void setGamer(Gamer com){
+        this.coma.add(com);
     }
 
     public String getName(){
         return name;
     }
-    public void setComands(List<Gamer> gamer){
-        for(int i=0; i<gamer.size(); i++){
-            Gamer g = gamer.get(i);
 
-        }
+    public void reBal(){
+
     }
 
 
