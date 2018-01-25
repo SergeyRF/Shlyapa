@@ -1,4 +1,4 @@
-package com.example.sergey.shlyapa;
+package com.example.sergey.shlyapa.game;
 
 import java.util.ArrayList;
 import java.util.Collections;

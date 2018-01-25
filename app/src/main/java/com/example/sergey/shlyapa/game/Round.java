@@ -1,4 +1,4 @@
-package com.example.sergey.shlyapa;
+package com.example.sergey.shlyapa.game;
 
 /**
  * Created by sergey on 1/14/18.

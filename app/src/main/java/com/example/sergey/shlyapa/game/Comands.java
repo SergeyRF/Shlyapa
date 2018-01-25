@@ -1,9 +1,7 @@
-package com.example.sergey.shlyapa;
+package com.example.sergey.shlyapa.game;
 
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 /**
  * Created by sergey on 1/14/18.

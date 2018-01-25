@@ -8,7 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.example.sergey.shlyapa.Game;
+import com.example.sergey.shlyapa.game.Game;
 import com.example.sergey.shlyapa.R;
 import com.example.sergey.shlyapa.ResAdaptFinish;
 

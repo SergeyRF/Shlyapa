@@ -9,11 +9,11 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-import com.example.sergey.shlyapa.Game;
+import com.example.sergey.shlyapa.game.Game;
 import com.example.sergey.shlyapa.OnSwipeTouchListener;
 import com.example.sergey.shlyapa.R;
-import com.example.sergey.shlyapa.Shlyapa;
-import com.example.sergey.shlyapa.Word;
+import com.example.sergey.shlyapa.game.Shlyapa;
+import com.example.sergey.shlyapa.game.Word;
 
 public class GameActyvity extends AppCompatActivity {
 

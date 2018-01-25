@@ -6,6 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.sergey.shlyapa.game.Gamer;
+
 import java.util.ArrayList;
 import java.util.List;
 

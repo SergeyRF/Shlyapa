@@ -11,8 +11,8 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.sergey.shlyapa.Config;
-import com.example.sergey.shlyapa.Game;
-import com.example.sergey.shlyapa.Gamer;
+import com.example.sergey.shlyapa.game.Game;
+import com.example.sergey.shlyapa.game.Gamer;
 import com.example.sergey.shlyapa.R;
 import com.example.sergey.shlyapa.ResAdapter;
 

@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
+import com.example.sergey.shlyapa.game.Word;
+
 import java.util.ArrayList;
 import java.util.List;
 
