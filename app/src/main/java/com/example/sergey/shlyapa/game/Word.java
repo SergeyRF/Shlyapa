@@ -12,6 +12,7 @@ public class Word {
     private boolean game;
 
 
+
     public Word(String string, int i) {
            word =string;
            id=i;

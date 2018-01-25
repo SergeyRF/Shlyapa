@@ -12,6 +12,7 @@ public class Comands {
     private int bal = 0;
     private String name;
     private List<Gamer> coma;
+    int n=0;
 
     public Comands(String name) {
         this.name=name;
@@ -24,17 +25,16 @@ public class Comands {
     public String getName(){
         return name;
     }
-
-    public void reBal(){
-
-    }
-
-
     public int getBal(){
         return bal;
     }
-    public void plusBal(){
-        bal += 1;
+    public void plusBal(int i){
+        bal +=i;
     }
-    public  void minusBal(){bal-=1;}
+    public String getGamer(){
+        if(n==coma.size()){
+            n=0;
+        }
+        return coma.get(++n).getName();
+    }
 }

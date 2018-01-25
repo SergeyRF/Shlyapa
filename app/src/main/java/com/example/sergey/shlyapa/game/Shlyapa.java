@@ -20,14 +20,14 @@ Shlyapa {
     private List<Word> roudWords;
     private int number = 0;
 
-    public Shlyapa() {
+     Shlyapa() {
         words = new ArrayList<>();
         for (int i = 0; i < 100; i++) {
             words.add(new Word("Хуепутало" + i, i));
         }
     }
 
-    public void createNewShlyapa() {
+    void createNewShlyapa() {
         roudWords = words;
     }
 
@@ -36,21 +36,27 @@ Shlyapa {
         return roudWords.get(number++);
 
     }*/
-    public void rafleShaffle() {
+    void rafleShaffle() {
         Collections.shuffle(roudWords);
     }
 
-    public void delwords() {
+    int delwords() {
         ListIterator<Word> b = roudWords.listIterator();
+        int i =0;
         while (b.hasNext()) {
-            if (b.next().getDel()) {
-
+           Word a= b.next();
+            if (a.getDel()) {
+                if(a.getTrOFl()){
+                    i++;
+                }
+                else i--;
                 b.remove();
             }
         }
+        return i;
     }
 
-    public List<Word> getWordsGame() {
+   public   List<Word> getWordsGame() {
         List<Word> w = new ArrayList<>();
         ListIterator<Word> b = roudWords.listIterator();
         while (b.hasNext()) {
@@ -60,6 +66,10 @@ Shlyapa {
             }
         }
         return w;
+    }
+    boolean getHasWord(){
+        if(roudWords.size()==0)return false;
+        else return true;
     }
 
     public Word getNextWord() {
@@ -71,7 +81,7 @@ Shlyapa {
         return roudWords.get(number++);
     }
 
-    public List<Word> getWords() {
+     List<Word> getWords() {
         return words;
     }
 }

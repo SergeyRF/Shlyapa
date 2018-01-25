@@ -12,7 +12,7 @@ import java.util.ListIterator;
 public class Game {
 
     private static Game instance;
-    private List<Round> rounds = new ArrayList<>();
+    private static int i;
     private Shlyapa shlyapa;
     private List<Word> wordround = new ArrayList<>();
     private List<Comands> comands = new ArrayList<>();
@@ -22,15 +22,26 @@ public class Game {
     private int time = 20;
     private int word;
     private int round;
-    private static int i;
+    private int numberComand = 0;
     private List<String> nameComand = new ArrayList<>();
 
-    public void setWordsperson(int i) {
-        wordsperson = i;
+    private Game() {
+        shlyapa = new Shlyapa();
+    }
+
+    public static Game getInstance() {
+        if (instance == null) {
+            instance = new Game();
+        }
+        return instance;
     }
 
     public int getWordsperson() {
         return wordsperson;
+    }
+
+    public void setWordsperson(int i) {
+        wordsperson = i;
     }
 
     public List<Gamer> getGamers() {
@@ -39,13 +50,6 @@ public class Game {
 
     public void newGamers(String gamer) {
         gamers.add(new Gamer(gamer));
-    }
-
-    public static Game getInstance() {
-        if (instance == null) {
-            instance = new Game();
-        }
-        return instance;
     }
 
     public void setComands() {
@@ -67,6 +71,10 @@ public class Game {
         return comands;
     }
 
+    public Comands getComandGame() {
+        return comands.get(numberComand);
+    }
+
     public void setComGamers() {
         ListIterator<Gamer> g = gamers.listIterator();
         while (g.hasNext()) {
@@ -79,6 +87,29 @@ public class Game {
 
         }
         return;
+    }
+
+    public boolean hasNextTurn() {
+        return shlyapa.getHasWord();
+    }
+
+    public void nextTurn() {
+        comands.get(numberComand).plusBal(shlyapa.delwords());
+        if (numberComand == comands.size()) {
+            numberComand = -1;
+        }
+        shlyapa.rafleShaffle();
+        numberComand++;
+    }
+
+    public boolean hasNextRound(){
+        return Round.hasRound();
+    }
+
+    public void NextRound(){
+        Round r = new Round();
+        r.nextRound();
+        shlyapa.createNewShlyapa();
     }
 
     public void setword(Word w) {
@@ -97,44 +128,21 @@ public class Game {
         return shlyapa;
     }
 
-    public void setTime(int time) {
-        this.time = time;
-    }
-
     public int getTime() {
         return time;
     }
 
-    public void setCommand(int command) {
-        this.command = command;
+    public void setTime(int time) {
+        this.time = time;
     }
 
     public int getCommand() {
         return command;
     }
 
-    public String getNextWord() {
-        i++;
-        return "Shlyapa" + i;
+    public void setCommand(int command) {
+        this.command = command;
     }
 
-    private Game() {
-        for (int a = 0; a < 3; a++) {
-            rounds.add(new Round("Hui nani " + a));
-        }
 
-        shlyapa = new Shlyapa();
-    }
-
-    public Round getNextRound() {
-        round++;
-        if (round < rounds.size()) {
-            return rounds.get(round);
-        }
-        return null;
-    }
-
-    public void finishRound() {
-        shlyapa.createNewShlyapa();
-    }
 }
