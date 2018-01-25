@@ -1,4 +1,4 @@
-package com.example.sergey.shlyapa;
+package com.example.sergey.shlyapa.activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +7,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
+
+import com.example.sergey.shlyapa.Game;
+import com.example.sergey.shlyapa.R;
 
 public class ConditionsActivity extends AppCompatActivity {
     TextView zna;

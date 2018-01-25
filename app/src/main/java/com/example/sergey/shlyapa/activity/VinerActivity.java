@@ -1,9 +1,12 @@
-package com.example.sergey.shlyapa;
+package com.example.sergey.shlyapa.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+
+import com.example.sergey.shlyapa.R;
+import com.example.sergey.shlyapa.ResAdapCom;
 
 public class VinerActivity extends AppCompatActivity {
 

@@ -1,7 +1,6 @@
-package com.example.sergey.shlyapa;
+package com.example.sergey.shlyapa.activity;
 
 import android.content.Intent;
-import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -9,7 +8,9 @@ import android.support.v7.widget.RecyclerView;
 import android.widget.Button;
 import android.widget.Toast;
 
-import java.util.List;
+import com.example.sergey.shlyapa.Game;
+import com.example.sergey.shlyapa.R;
+import com.example.sergey.shlyapa.ResAdaptFinish;
 
 public class RoundFinishActivity extends AppCompatActivity {
     Button button;

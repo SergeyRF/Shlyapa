@@ -1,17 +1,23 @@
-package com.example.sergey.shlyapa;
+package com.example.sergey.shlyapa.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.example.sergey.shlyapa.Game;
+import com.example.sergey.shlyapa.OnSwipeTouchListener;
+import com.example.sergey.shlyapa.R;
+import com.example.sergey.shlyapa.Shlyapa;
+import com.example.sergey.shlyapa.Word;
 
 public class GameActyvity extends AppCompatActivity {
+
+    public static final String TAG = GameActyvity.class.getSimpleName();
 
     private TextView tvWord;
     private TextView tvTime;
@@ -35,10 +41,14 @@ public class GameActyvity extends AppCompatActivity {
 
         game = Game.getInstance();
         shlyapa = game.getShlyapa();
+
+        Log.d(TAG, "onCreate: words in shlyapa " + shlyapa.getWords().size());
         timeLeft = game.getTime();
+        Log.d(TAG, "onCreate: time " + timeLeft);
         shlyapa.rafleShaffle();
         currentword = shlyapa.getNextWord();
         tvWord.setText(currentword.getWord());
+
         cvWord.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -49,6 +59,7 @@ public class GameActyvity extends AppCompatActivity {
         cvWord.setOnTouchListener(new OnSwipeTouchListener() {
             @Override
             public boolean onSwipeLeft() {
+                Log.d(TAG, "onSwipeLeft: ");
                 currentword.setTrOfl(false);
                 currentword.setGame();
                 currentword = shlyapa.getNextWord();
@@ -62,6 +73,7 @@ public class GameActyvity extends AppCompatActivity {
 
             @Override
             public boolean onSwipeRight() {
+                Log.d(TAG, "onSwipeRight: ");
                 currentword.setTrOfl(true);
                 currentword.setGame();
                 currentword = shlyapa.getNextWord();

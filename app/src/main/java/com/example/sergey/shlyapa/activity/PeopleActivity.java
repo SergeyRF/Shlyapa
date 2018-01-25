@@ -1,7 +1,6 @@
-package com.example.sergey.shlyapa;
+package com.example.sergey.shlyapa.activity;
 
 import android.content.Intent;
-import android.net.sip.SipSession;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,7 +9,12 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
+
+import com.example.sergey.shlyapa.Config;
+import com.example.sergey.shlyapa.Game;
+import com.example.sergey.shlyapa.Gamer;
+import com.example.sergey.shlyapa.R;
+import com.example.sergey.shlyapa.ResAdapter;
 
 import java.util.List;
 
@@ -32,6 +36,13 @@ public class PeopleActivity extends AppCompatActivity {
         rv.setLayoutManager(new LinearLayoutManager(this));
         ResAdapter adapter = new ResAdapter();
         EditText name = findViewById(R.id.name);
+
+        //Добавляем левых людей, если это указано в Config
+        if (Config.USE_FAKE_PEOPLES) {
+            for(int i = 0; i < 10; i++) {
+                gamers.add(new Gamer("Ashot " + i));
+            }
+        }
 
 
 

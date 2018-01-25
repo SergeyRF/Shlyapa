@@ -1,4 +1,4 @@
-package com.example.sergey.shlyapa;
+package com.example.sergey.shlyapa.activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +7,10 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
+
+import com.example.sergey.shlyapa.Game;
+import com.example.sergey.shlyapa.R;
+import com.example.sergey.shlyapa.ResAdapCom;
 
 public class RoundActivity extends AppCompatActivity {
     Button button;

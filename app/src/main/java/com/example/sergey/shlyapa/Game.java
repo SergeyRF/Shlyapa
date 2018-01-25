@@ -19,7 +19,7 @@ public class Game {
     private List<Gamer> gamers =new ArrayList<>();
     private int wordsperson;
     private int command;
-    private int time = 5;
+    private int time = 20;
     private int word;
     private int round;
     private static int i;

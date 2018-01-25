@@ -9,19 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FirstActivity">
+        <activity android:name=".activity.FirstActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".GameActyvity" />
-        <activity android:name=".PeopleActivity" />
-        <activity android:name=".ConditionsActivity" />
-        <activity android:name=".RoundActivity" />
-        <activity android:name=".RoundFinishActivity" />
-        <activity android:name=".VinerActivity"></activity>
+        <activity android:name=".activity.GameActyvity" />
+        <activity android:name=".activity.PeopleActivity" />
+        <activity android:name=".activity.ConditionsActivity" />
+        <activity android:name=".activity.RoundActivity" />
+        <activity android:name=".activity.RoundFinishActivity" />
+        <activity android:name=".activity.VinerActivity"></activity>
     </application>
 
 </manifest>
