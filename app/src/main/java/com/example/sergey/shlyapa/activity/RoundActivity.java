@@ -25,7 +25,7 @@ public class RoundActivity extends AppCompatActivity {
         rac.setComands(Game.getInstance().getComands());
         recyclerView.setAdapter(rac);
 
-        Game.getInstance().getShlyapa().createNewShlyapa();
+        Game.getInstance().finishRound();
 
 
         button = findViewById(R.id.game);

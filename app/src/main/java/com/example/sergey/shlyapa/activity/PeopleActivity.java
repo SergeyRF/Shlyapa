@@ -44,8 +44,6 @@ public class PeopleActivity extends AppCompatActivity {
             }
         }
 
-
-
         fAB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

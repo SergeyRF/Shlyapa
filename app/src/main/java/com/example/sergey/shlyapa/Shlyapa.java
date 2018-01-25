@@ -13,62 +13,63 @@ import java.util.ListIterator;
 
 public class
 Shlyapa {
-    
+
     public static final String TAG = Shlyapa.class.getSimpleName();
 
-    private  List<Word> words;
+    private List<Word> words;
     private List<Word> roudWords;
     private int number = 0;
 
     public Shlyapa() {
         words = new ArrayList<>();
-        for(int i=0; i<100; i++){
-            words.add(new Word("Хуепутало"+i,i));
+        for (int i = 0; i < 100; i++) {
+            words.add(new Word("Хуепутало" + i, i));
         }
     }
 
-    public void createNewShlyapa(){
-        roudWords=words;
+    public void createNewShlyapa() {
+        roudWords = words;
     }
+
     /*public String getNextWord1(){
         if(roudWords.size() <= number) return null;
         return roudWords.get(number++);
 
     }*/
-    public void rafleShaffle(){
+    public void rafleShaffle() {
         Collections.shuffle(roudWords);
     }
-    public void delwords(){
+
+    public void delwords() {
         ListIterator<Word> b = roudWords.listIterator();
-        while (b.hasNext()){
-            if(b.next().getDel()){
+        while (b.hasNext()) {
+            if (b.next().getDel()) {
 
                 b.remove();
             }
         }
     }
+
     public List<Word> getWordsGame() {
         List<Word> w = new ArrayList<>();
         ListIterator<Word> b = roudWords.listIterator();
         while (b.hasNext()) {
-            Word next  = b.next();
-            if(next.getGame()) {
+            Word next = b.next();
+            if (next.getGame()) {
                 w.add(next);
             }
         }
         return w;
     }
 
-
     public Word getNextWord() {
 
         Log.d(TAG, "getNextWord: ");
-        if(roudWords.size() <= number){ return null;}
+        if (roudWords.size() <= number) {
+            return null;
+        }
         return roudWords.get(number++);
     }
-
-
-
 
     public List<Word> getWords() {
         return words;

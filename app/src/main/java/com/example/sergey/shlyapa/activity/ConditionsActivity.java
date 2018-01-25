@@ -8,17 +8,19 @@ import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import com.example.sergey.shlyapa.Config;
 import com.example.sergey.shlyapa.Game;
 import com.example.sergey.shlyapa.R;
 
 public class ConditionsActivity extends AppCompatActivity {
-    TextView zna;
-    Button button;
-    TextView znach;
-    TextView znache;
-    private int time;
-    private int comand;
-    private int words;
+
+    private Button button;
+    private TextView zna;
+    private TextView znach;
+    private TextView znache;
+    private int time = Config.DEFAULT_TIME;
+    private int comand = Config.DEFAULT_COMMANDS_COUNT;
+    private int words = Config.DEFAULT_WORDS_COUNT;
 
 
     @Override
@@ -26,6 +28,7 @@ public class ConditionsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_conditions);
         button = findViewById(R.id.button1);
+        //Че это за хуета? Какие зна и значе?
         zna = findViewById(R.id.zna);
         znach = findViewById(R.id.znach);
         znache = findViewById(R.id.znache);
@@ -85,6 +88,8 @@ public class ConditionsActivity extends AppCompatActivity {
 
            }
        });
+
+
        button.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
