@@ -7,7 +7,7 @@ package com.example.sergey.shlyapa.game;
 
 public class Round {
 
-    private String[] rules=new String[]{"Раунд №1.\n Бей, убивай","Раунд №2.\n Еби гусей","Раунд №3.\n Хуй! Пизда! Джигурда!"};
+    private String[] rules=new String[]{" Бей, убивай"," Еби гусей"," Хуй! Пизда! Джигурда!"};
     private static int n=1;
 
 
@@ -20,6 +20,9 @@ public class Round {
             return false;
         }
         else return true;
+    }
+    public static String getRoundN(){
+        return String.valueOf(n);
     }
     public String getRules(){
         return rules[n];

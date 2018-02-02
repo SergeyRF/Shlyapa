@@ -40,7 +40,7 @@ Shlyapa {
         Collections.shuffle(roudWords);
     }
 
-    int delwords() {
+    public int delwords() {
         ListIterator<Word> b = roudWords.listIterator();
         int i =0;
         while (b.hasNext()) {

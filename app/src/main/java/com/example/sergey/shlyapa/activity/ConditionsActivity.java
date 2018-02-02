@@ -15,9 +15,9 @@ import com.example.sergey.shlyapa.R;
 public class ConditionsActivity extends AppCompatActivity {
 
     private Button button;
-    private TextView zna;
-    private TextView znach;
-    private TextView znache;
+    private TextView times;
+    private TextView gamersw;
+    private TextView comands;
     private int time = Config.DEFAULT_TIME;
     private int comand = Config.DEFAULT_COMMANDS_COUNT;
     private int words = Config.DEFAULT_WORDS_COUNT;
@@ -29,15 +29,19 @@ public class ConditionsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_conditions);
         button = findViewById(R.id.button1);
         //Че это за хуета? Какие зна и значе?
-        zna = findViewById(R.id.zna);
-        znach = findViewById(R.id.znach);
-        znache = findViewById(R.id.znache);
+        times = findViewById(R.id.times);
+        gamersw = findViewById(R.id.gamers);
+        comands = findViewById(R.id.comands);
+        times.setText(time+"");
+        gamersw.setText(words+"");
+        comands.setText(comand+"");
+
         final SeekBar comande = findViewById(R.id.comande);
         comande.setMax(Game.getInstance().getGamers().size()/2-2);
         comande.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                znache.setText((comande.getProgress()+2)+"");
+                comands.setText((comande.getProgress()+2)+"");
                 comand = comande.getProgress()+2;
             }
 
@@ -55,7 +59,7 @@ public class ConditionsActivity extends AppCompatActivity {
         word.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                znach.setText((word.getProgress()+5) + "");
+                gamersw.setText((word.getProgress()+5) + "");
                 words = word.getProgress()+5;
             }
 
@@ -73,7 +77,7 @@ public class ConditionsActivity extends AppCompatActivity {
        seek.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
            @Override
            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-               zna.setText(String.valueOf(seek.getProgress()+30));
+               times.setText(String.valueOf(seek.getProgress()+30));
                time = seek.getProgress()+30;
            }
 
@@ -97,6 +101,8 @@ public class ConditionsActivity extends AppCompatActivity {
                Game.getInstance().setCommand(comand);
                Game.getInstance().setComands();
                Game.getInstance().setWordsperson(words);
+               Game.getInstance().newShlyapa();
+               Game.getInstance().setComGamers();
                Intent intent =new Intent(ConditionsActivity.this,RoundActivity.class);
                startActivity(intent);
            }

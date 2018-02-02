@@ -1,6 +1,7 @@
 package com.example.sergey.shlyapa.game;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -11,7 +12,7 @@ public class Comands {
 
     private int bal = 0;
     private String name;
-    private List<Gamer> coma;
+    private List<Gamer> coma=new ArrayList<>();
     int n=0;
 
     public Comands(String name) {
@@ -19,7 +20,7 @@ public class Comands {
     }
 
     public void setGamer(Gamer com){
-        this.coma.add(com);
+        coma.add(com);
     }
 
     public String getName(){

@@ -42,10 +42,10 @@ public class GameActyvity extends AppCompatActivity {
         game = Game.getInstance();
         shlyapa = game.getShlyapa();
 
-        Log.d(TAG, "onCreate: words in shlyapa " + shlyapa.getWords().size());
+        //Log.d(TAG, "onCreate: words in shlyapa " + shlyapa.getWords().size());
         timeLeft = game.getTime();
         Log.d(TAG, "onCreate: time " + timeLeft);
-        shlyapa.rafleShaffle();
+        Game.getInstance().raffleShaffle();
         currentword = shlyapa.getNextWord();
         tvWord.setText(currentword.getWord());
 

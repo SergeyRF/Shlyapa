@@ -106,10 +106,14 @@ public class Game {
         return Round.hasRound();
     }
 
-    public void NextRound(){
+    public void nextRound(){
         Round r = new Round();
         r.nextRound();
         shlyapa.createNewShlyapa();
+    }
+    public String rulesRound(){
+        Round r = new Round();
+        return r.getRules();
     }
 
     public void setword(Word w) {
@@ -126,6 +130,12 @@ public class Game {
 
     public Shlyapa getShlyapa() {
         return shlyapa;
+    }
+    public void raffleShaffle(){
+        shlyapa.rafleShaffle();
+    }
+    public void newShlyapa(){
+        shlyapa.createNewShlyapa();
     }
 
     public int getTime() {
