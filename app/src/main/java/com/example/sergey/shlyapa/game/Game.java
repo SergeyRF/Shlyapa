@@ -23,6 +23,7 @@ public class Game {
     private int word;
     private int round;
     private int numberComand = 0;
+    private int gamerNumber=0;
     private List<String> nameComand = new ArrayList<>();
 
     private Game() {
@@ -46,6 +47,19 @@ public class Game {
 
     public List<Gamer> getGamers() {
         return gamers;
+    }
+    public boolean hasNextGamer(){
+        if(gamers.size()<=gamerNumber+1){
+            return false;
+        }
+        return true;
+    }
+    public String getTrueGamer(){
+        return gamers.get(gamerNumber).getName();
+    }
+    public String nextGamer(){
+        gamerNumber++;
+        return gamers.get(gamerNumber).getName();
     }
 
     public void newGamers(String gamer) {
@@ -116,10 +130,6 @@ public class Game {
         return r.getRules();
     }
 
-    public void setword(Word w) {
-        wordround.add(w);
-    }
-
     public List<Word> getword() {
         return wordround;
     }
@@ -152,6 +162,9 @@ public class Game {
 
     public void setCommand(int command) {
         this.command = command;
+    }
+    public void setSHLYAPA(List<Word> w){
+        shlyapa.setShlyapa(w);
     }
 
 

@@ -21,7 +21,8 @@
         <activity android:name=".activity.ConditionsActivity" />
         <activity android:name=".activity.RoundActivity" />
         <activity android:name=".activity.RoundFinishActivity" />
-        <activity android:name=".activity.VinerActivity"></activity>
+        <activity android:name=".activity.VinerActivity" />
+        <activity android:name=".activity.CreateSlyapaActivity"></activity>
     </application>
 
 </manifest>

@@ -40,7 +40,7 @@ public class ResAdapter extends RecyclerView.Adapter<ResAdapter.Holder> {
         notifyDataSetChanged();
     }
 
-    class Holder extends RecyclerView.ViewHolder{
+    static class Holder extends RecyclerView.ViewHolder{
 
         private TextView name;
 

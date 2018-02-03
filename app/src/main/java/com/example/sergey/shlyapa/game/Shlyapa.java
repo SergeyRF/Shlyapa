@@ -16,19 +16,25 @@ Shlyapa {
 
     public static final String TAG = Shlyapa.class.getSimpleName();
 
-    private List<Word> words;
-    private List<Word> roudWords;
+    private List<Word> words = new ArrayList<>();
+    private List<Word> roudWords=new ArrayList<>();
     private int number = 0;
 
-     Shlyapa() {
+     /*Shlyapa() {
         words = new ArrayList<>();
         for (int i = 0; i < 100; i++) {
-            words.add(new Word("Хуепутало" + i, i));
+            words.add(new Word("Хуепутало" + i));
         }
-    }
+    }*/
 
     void createNewShlyapa() {
         roudWords = words;
+    }
+
+    void setShlyapa(List<Word> w){
+        for(int i=0;i<w.size();i++){
+            words.add(new Word(w.get(i).getWord()));
+        }
     }
 
     /*public String getNextWord1(){
@@ -68,7 +74,9 @@ Shlyapa {
         return w;
     }
     boolean getHasWord(){
-        if(roudWords.size()==0)return false;
+        if(roudWords.size()==0){
+            return false;
+        }
         else return true;
     }
 

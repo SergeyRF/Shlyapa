@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.sergey.shlyapa.Config;
 import com.example.sergey.shlyapa.game.Game;
@@ -38,11 +39,11 @@ public class PeopleActivity extends AppCompatActivity {
         EditText name = findViewById(R.id.name);
 
         //Добавляем левых людей, если это указано в Config
-        if (Config.USE_FAKE_PEOPLES) {
+        /*if (Config.USE_FAKE_PEOPLES) {
             for(int i = 0; i < 10; i++) {
                 gamers.add(new Gamer("Ashot " + i));
             }
-        }
+        }*/
 
         fAB.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,8 +61,13 @@ public class PeopleActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(PeopleActivity.this,ConditionsActivity.class);
-                startActivity(intent);
+                if(Game.getInstance().getGamers().size()<4){
+                    Toast.makeText(PeopleActivity.this,"Мало Людей",Toast.LENGTH_LONG).show();
+                }
+                else {
+                    Intent intent = new Intent(PeopleActivity.this, ConditionsActivity.class);
+                    startActivity(intent);
+                }
             }
         });
     }

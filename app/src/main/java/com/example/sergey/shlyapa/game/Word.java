@@ -10,19 +10,20 @@ public class Word {
     private boolean del;
     private boolean trOfl;
     private boolean game;
+    private static int i=0;
 
 
 
-    public Word(String string, int i) {
+    public Word(String string) {
            word =string;
-           id=i;
+           id=++i;
     }
     public void setGame(){game=true;}
     public void setNoDel(){game = false;}
     public boolean getGame(){return game;}
-    public int getId(){
-        return id;
-    }
+  //  public int getId(){
+    //    return id;
+    //}
     public  String getWord(){return word;}
     public boolean getDel(){return del;}
     public void setDel(){del=true;}
