@@ -1,5 +1,7 @@
 package com.example.sergey.shlyapa.game;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -11,6 +13,8 @@ import java.util.ListIterator;
 // Всё для игры берем отсюда
 public class Game {
 
+    public static final String TAG = Game.class.getSimpleName();
+
     private static Game instance;
     private static int i;
     private Shlyapa shlyapa;
@@ -19,7 +23,7 @@ public class Game {
     private List<Gamer> gamers = new ArrayList<>();
     private int wordsperson;
     private int command;
-    private int time = 20;
+    private int time = 10;
     private int word;
     private int round;
     private int numberComand = 0;
@@ -108,6 +112,7 @@ public class Game {
     }
 
     public void nextTurn() {
+        Log.d(TAG, "nextTurn: ");
         comands.get(numberComand).plusBal(shlyapa.delwords());
         if (numberComand == comands.size()-1) {
             numberComand = -1;
@@ -121,10 +126,12 @@ public class Game {
     }
 
     public void nextRound(){
+        Log.d(TAG, "nextRound: ");
         Round r = new Round();
         r.nextRound();
         shlyapa.createNewShlyapa();
     }
+
     public String rulesRound(){
         Round r = new Round();
         return r.getRules();

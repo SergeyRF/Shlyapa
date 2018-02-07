@@ -31,8 +31,7 @@ public class RoundActivity extends AppCompatActivity {
         round=findViewById(R.id.round);
         if( Game.getInstance().hasNextTurn()){
             Game.getInstance().nextTurn();
-        }
-        else {
+        } else {
             if(Game.getInstance().hasNextRound())
             {
                 Game.getInstance().nextTurn();

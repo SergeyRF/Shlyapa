@@ -102,7 +102,7 @@ public class ConditionsActivity extends AppCompatActivity {
                Game.getInstance().setComands();
                Game.getInstance().setWordsperson(words);
                Game.getInstance().setComGamers();
-               Intent intent =new Intent(ConditionsActivity.this,CreateSlyapaActivity.class);
+               Intent intent =new Intent(ConditionsActivity.this,RoundActivity.class);
                startActivity(intent);
            }
        });

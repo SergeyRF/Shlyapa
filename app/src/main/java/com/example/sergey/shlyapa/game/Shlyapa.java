@@ -11,24 +11,25 @@ import java.util.ListIterator;
  * Created by alex on 1/18/18.
  */
 
-public class
-Shlyapa {
+public class Shlyapa {
 
     public static final String TAG = Shlyapa.class.getSimpleName();
 
     private List<Word> words = new ArrayList<>();
     private List<Word> roudWords=new ArrayList<>();
-    private int number = 0;
+    private int number = -1;
 
-     /*Shlyapa() {
+     Shlyapa() {
         words = new ArrayList<>();
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 10; i++) {
             words.add(new Word("Хуепутало" + i));
         }
-    }*/
+    }
 
     void createNewShlyapa() {
-        roudWords = words;
+        Log.d(TAG, "createNewShlyapa: ");
+        roudWords = new ArrayList<>(words);
+        number = 0;
     }
 
     void setShlyapa(List<Word> w){
@@ -44,6 +45,7 @@ Shlyapa {
     }*/
     void rafleShaffle() {
         Collections.shuffle(roudWords);
+        number = 0;
     }
 
     public int delwords() {
@@ -82,12 +84,14 @@ Shlyapa {
     }
 
     public Word getNextWord() {
-
-        Log.d(TAG, "getNextWord: ");
+        number++;
+        Log.d(TAG, "getNextWord: number " + number + " size " + roudWords.size());
         if (roudWords.size() <= number) {
+            Log.d(TAG, "getNextWord: null");
             return null;
         }
-        return roudWords.get(number++);
+        Log.d(TAG, "getNextWord: ");
+        return roudWords.get(number);
     }
 
      List<Word> getWords() {
