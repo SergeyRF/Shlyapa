@@ -19,7 +19,7 @@ public class Round {
         if(n==3){
             return false;
         }
-        else return true;
+        return true;
     }
     public static String getRoundN(){
         return String.valueOf(n);

@@ -75,6 +75,7 @@ Shlyapa {
     }
     boolean getHasWord(){
         if(roudWords.size()==0){
+
             return false;
         }
         else return true;

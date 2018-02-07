@@ -39,11 +39,11 @@ public class PeopleActivity extends AppCompatActivity {
         EditText name = findViewById(R.id.name);
 
         //Добавляем левых людей, если это указано в Config
-        /*if (Config.USE_FAKE_PEOPLES) {
+        if (Config.USE_FAKE_PEOPLES) {
             for(int i = 0; i < 10; i++) {
                 gamers.add(new Gamer("Ashot " + i));
             }
-        }*/
+        }
 
         fAB.setOnClickListener(new View.OnClickListener() {
             @Override

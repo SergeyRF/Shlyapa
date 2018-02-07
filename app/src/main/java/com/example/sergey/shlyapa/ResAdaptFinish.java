@@ -63,6 +63,9 @@ public class ResAdaptFinish extends RecyclerView.Adapter<ResAdaptFinish.Holder> 
 
         public void bind(Word w) {
             word.setText(w.getWord());
+            yes.setChecked(false);
+            not.setChecked(false);
+            elsee.setChecked(false);
             if(w.getTrOFl()){yes.setChecked(true); w.setDel();}
             else {not.setChecked(true);w.setDel();}
             yes.setOnClickListener(new View.OnClickListener() {

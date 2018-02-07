@@ -1,16 +1,16 @@
 package com.example.sergey.shlyapa.activity;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.example.sergey.shlyapa.game.Game;
 import com.example.sergey.shlyapa.R;
 import com.example.sergey.shlyapa.ResAdaptFinish;
+import com.example.sergey.shlyapa.game.Game;
 
 public class RoundFinishActivity extends AppCompatActivity {
     Button button;
@@ -32,9 +32,8 @@ public class RoundFinishActivity extends AppCompatActivity {
 
     private void startNext() {
         //create intent and start activity
-Intent intent = new Intent(RoundFinishActivity.this, RoundActivity.class);
-Game.getInstance().getShlyapa().delwords();
-startActivity(intent);
+        Intent intent = new Intent(RoundFinishActivity.this, RoundActivity.class);
+        startActivity(intent);
         // save everything
 
         //call finish

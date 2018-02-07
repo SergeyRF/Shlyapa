@@ -109,7 +109,7 @@ public class Game {
 
     public void nextTurn() {
         comands.get(numberComand).plusBal(shlyapa.delwords());
-        if (numberComand == comands.size()) {
+        if (numberComand == comands.size()-1) {
             numberComand = -1;
         }
         shlyapa.rafleShaffle();

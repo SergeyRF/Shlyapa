@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
@@ -30,6 +31,7 @@ public class CreateSlyapaActivity extends AppCompatActivity {
     EditText wordText;
     RadioButton fuckRB;
     Button button;
+    CheckBox random;
     List<Word> wordList = new ArrayList<>();
 
     @Override
@@ -45,10 +47,14 @@ public class CreateSlyapaActivity extends AppCompatActivity {
         wordText = findViewById(R.id.wordText);
         gamer = findViewById(R.id.gamer);
         button =findViewById(R.id.buttonNext);
+        random = findViewById(R.id.random);
         gamer.setText(Game.getInstance().getTrueGamer());
         fuckRB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                for(int i=0;i <= Game.getInstance().getWordsperson()-1;i++){
+                    wordList.add(new Word("Пиздец Заебало"+i));
+                    wAA.notifyDataSetChanged();}
                 if(!wordText.getText().toString().isEmpty()&& wordList.size()!=Game.getInstance().getWordsperson()){
                     Word word = new Word(wordText.getText().toString());
                     Log.d(TAG, "onClick: new word " + word.getWord());
@@ -64,6 +70,7 @@ public class CreateSlyapaActivity extends AppCompatActivity {
 
 
         });
+
         button.setOnClickListener(new View.OnClickListener() {
 
             @Override
